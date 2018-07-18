@@ -1,0 +1,17 @@
+FROM node:8.9-alpine
+
+RUN mkdir /src
+
+RUN npm install -g webpack
+
+WORKDIR /src
+
+ADD ./ /src/
+
+RUN npm install
+
+RUN npm run build
+
+EXPOSE 8080
+
+CMD npm run start

@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "globals": {
+    "window": true,
+    "document": true,
+    "alert": true,
+    "Event": true,
+    "config": true,
+    "FB": true
+  },
+  "rules": {
+    "react/forbid-prop-types": ["error", { "forbid": ["any", "object"] }]
+  }
+}

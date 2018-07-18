@@ -1,0 +1,101 @@
+body {
+  font-family: NunitoSans;
+}
+
+/*
+  Text Align
+*/
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/*
+  Fixed Position
+*/
+.fixed-position {
+  font-family: inherit;;
+  height: auto;
+  position: fixed;
+  padding: 0 10px 10px 10px;
+  z-index: 100;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    & {
+      width: 50%;
+      &.top-center, &.bottom-center {
+        left: 25% !important;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    & {
+      width: 40%;
+      &.top-center, &.bottom-center {
+        left: 30% !important;
+      }
+    }
+  }
+
+  &.top-left {
+    top: 0px;
+    bottom: auto;
+    left: 0px;
+    right: auto;
+  }
+
+  &.top-right {
+    top: 0px;
+    bottom: auto;
+    left: auto;
+    right: 0px;
+  }
+
+  &.top-center {
+    top: 0px;
+    bottom: auto;
+    margin: 0 auto;
+    left: 35%;
+  }
+
+  &.bottom-left {
+    top: auto;
+    bottom: 0px;
+    left: 0px;
+    right: auto;
+  }
+
+  &.bottom-right {
+    top: auto;
+    bottom: 0px;
+    left: auto;
+    right: 0px;
+  }
+
+  &.bottom-center {
+    top: auto;
+    bottom: 0px;
+    margin: 0 auto;
+    left: 35%;
+  }
+
+  & .messageDiv {
+    padding: 5px;
+    font-size: 14px;
+  }
+};

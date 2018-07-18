@@ -1,0 +1,44 @@
+@import '../../assets/variable/color.scss';
+
+@each $key, $value in $defaultColors {
+  .btn-#{$key} {
+    background-color: $value;
+    color: #fff;
+  }
+
+  .btn-#{$key}-lighten {
+    background-color: lighten($color: $value, $amount: 20);
+    color: #fff;
+  }
+
+  .btn-#{$key}-darken {
+    background-color: darken($color: $value, $amount: 20);
+    color: #fff;
+  }
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  border-radius: 5px;
+  border: 1px solid transparent;
+
+  padding: 10px 15px;
+  margin: 5px 7px;
+
+  line-height: 1.5;
+  user-select: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

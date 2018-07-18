@@ -1,0 +1,4 @@
+build/
+config/
+
+src/__test__/
