@@ -14,7 +14,6 @@ Global React boilerplate with React, Router, Redux, Observable, RxJs, i18n, Jest
 
 ## Library
 - Lodash
-- 
 
 ## How to run
 ```bash
