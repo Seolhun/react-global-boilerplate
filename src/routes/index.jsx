@@ -7,7 +7,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import { CookieUtils } from '../utils';
+import { getCookieByName } from '../utils';
 import { TOKENS } from '../constant';
 
 import schema from './schema';
@@ -40,7 +40,7 @@ const renderLink = (route, depth) => {
 };
 
 const renderRoute = (route, depth) => {
-  const auth = CookieUtils.getCookieByName(TOKENS.AUTH);
+  const auth = getCookieByName(TOKENS.AUTH);
   if (!auth) {
     redirectLink('/');
   }

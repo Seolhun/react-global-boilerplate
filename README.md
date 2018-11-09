@@ -1,16 +1,20 @@
-
 # React-Global-BoilerPlate
 
 ## Description
-Global React boilerplate with React, Router, Redux, Observable, RxJs, i18n, Jest
+Global React boilerplate with React, Router, Redux, Saga, RxJs, i18n, Jest
 
 ## Packages
-- React 16.4
+- webpack4
+- babel7
+- React 16.6
 - react-router V4
 - redux
-- redux-observable
+- redux-saga
 - i18next
-- Jest
+- jest
+- react-helmet
+<!-- - circle.ci -->
+<!-- - docker -->
 
 ## Library
 - Lodash

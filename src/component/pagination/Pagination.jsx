@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-
 import { range as Rnage, isNumber } from 'lodash';
-
 import PropTypes from 'prop-types';
 
-import './PaginationComponent.css';
+import Button from '../button';
 
-class PaginationComponent extends Component {
+import './Pagination.css';
+
+class Pagination extends Component {
   pagination(pageIndex, totalCount, range) {
     const { limit } = this.props;
     const current = pageIndex;
@@ -38,14 +38,13 @@ class PaginationComponent extends Component {
     } = this.props;
     const pages = this.pagination(pageIndex, totalCount, range);
     return pages.map(pageNum => (
-      <button
+      <Button
         key={pageNum}
-        type="button"
         className={`btn ${pageIndex === pageNum ? 'btn-success' : 'btn-primary'} margin-5`}
         onClick={isNumber(pageNum) ? () => onClick(pageNum) : () => {}}
       >
         {pageNum}
-      </button>
+      </Button>
     ));
   }
 
@@ -62,7 +61,7 @@ class PaginationComponent extends Component {
   }
 }
 
-PaginationComponent.propTypes = {
+Pagination.propTypes = {
   pageIndex: PropTypes.number.isRequired,
   totalCount: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
@@ -71,9 +70,9 @@ PaginationComponent.propTypes = {
   range: PropTypes.number,
 };
 
-PaginationComponent.defaultProps = {
+Pagination.defaultProps = {
   limit: 10,
   range: 5,
 };
 
-export default PaginationComponent;
+export default Pagination;

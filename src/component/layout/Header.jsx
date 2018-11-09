@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { renderLink } from '../../routes';
 
 const Header = (props) => {
-  console.log('####', props);
   const { depth, routes } = props;
   return (
     <Fragment>

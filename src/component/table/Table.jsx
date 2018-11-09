@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import './TableComponent.scss';
+import './Table.scss';
 
-class TableComponent extends Component {
+class Table extends Component {
   renderHeader() {
     const { schema } = this.props;
     return schema.map(schem => (
@@ -55,7 +55,7 @@ class TableComponent extends Component {
   }
 }
 
-TableComponent.propTypes = {
+Table.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   schema: PropTypes.arrayOf(PropTypes.object).isRequired,
 
@@ -63,9 +63,9 @@ TableComponent.propTypes = {
   className: PropTypes.string,
 };
 
-TableComponent.defaultProps = {
+Table.defaultProps = {
   showScroll: false,
   className: '',
 };
 
-export default TableComponent;
+export default Table;

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import * as _ from 'lodash';
-import TableComponent from '../../component/table';
-import PaginationComponent from '../../component/pagination';
+import Table from '../../component/table';
+import Pagination from '../../component/pagination';
 
-import BusController from '../../api/BusController';
+import { BusController } from '../../api';
 
 import schema from './schema';
 
@@ -48,17 +48,13 @@ class TablePaginationView extends Component {
   render() {
     const { pageIndex, totalCount } = this.state;
     return (
-      <section>
-        <div>
-          <PaginationComponent
-            pageIndex={pageIndex}
-            totalCount={totalCount}
-            onClick={this.handleChangePage}
-          />
-        </div>
-        <div>
-          <TableComponent items={this.setPagingItems(pageIndex)} schema={schema} />
-        </div>
+      <section className="container">
+        <Pagination
+          pageIndex={pageIndex}
+          totalCount={totalCount}
+          onClick={this.handleChangePage}
+        />
+        <Table items={this.setPagingItems(pageIndex)} schema={schema} />
       </section>
     );
   }

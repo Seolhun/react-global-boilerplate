@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "inlineSourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es7",
+    ],
+    "jsx": "react",
+    "strict": true /* Enable all strict type-checking options. */ ,
+
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true /* Report errors on unused locals. */ ,
+    "noUnusedParameters": false /* Report errors on unused parameters. */ ,
+    "noImplicitReturns": true /* Report error when not all code paths in function return a value. */ ,
+    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */ ,
+
+    /* Debugging Options */
+    "traceResolution": false /* Report module resolution log messages. */ ,
+    "listEmittedFiles": false /* Print names of generated files part of the compilation. */ ,
+    "listFiles": false /* Print names of files part of the compilation. */ ,
+    "pretty": true /* Stylize errors and messages using color and context. */ ,
+
+    // Mine
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitOnError": true,
+    "inlineSources": true,
+    "rootDir": ".",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules/**", "packages/**", "./src/__test__/**"],
+}

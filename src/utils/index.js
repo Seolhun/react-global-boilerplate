@@ -1,9 +1,20 @@
-import * as CookieUtils from './CookieUtils';
+import {
+  getCookieAll,
+  getCookieByName,
+  setCookieByName,
+  removeCookieByName,
+} from './CookieUtils';
 
 export {
-  CookieUtils,
+  getCookieAll,
+  getCookieByName,
+  setCookieByName,
+  removeCookieByName,
 };
 
 export default {
-  CookieUtils,
+  getCookieAll,
+  getCookieByName,
+  setCookieByName,
+  removeCookieByName,
 };

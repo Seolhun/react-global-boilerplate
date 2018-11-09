@@ -1,9 +1,7 @@
-import CustomStatController from './CustomStatController';
-import AuthenticationController from './AuthenticationController';
+import BusController from './BusController';
 
-export { CustomStatController, AuthenticationController };
+export { BusController };
 
 export default {
-  CustomStatController,
-  AuthenticationController,
+  BusController,
 };
