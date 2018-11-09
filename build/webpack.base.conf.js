@@ -1,37 +1,40 @@
 const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
-
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 module.exports = {
+  mode: process.env.NODE_ENV,
   entry: {
     index: resolve('src/Main.jsx'),
   },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
+    publicPath: IS_PRODUCTION
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css', '.json'],
     alias: {
       '@': resolve('src'),
     },
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
+        include: [resolve('src'), resolve('src/__test__')],
+      }, {
+        test: /\.(ts|tsx)$/,
+        loader: 'ts-loader',
         include: [resolve('src'), resolve('src/__test__')],
       }, {
         test: /\.css$/,
@@ -74,12 +77,44 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         },
-      }],
+      }
+    ],
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  },
+  performance: {
+    hints: 'warning',
+    maxAssetSize: 200000,
+    maxEntrypointSize: 400000,
+    assetFilter: function(assetFilename) {
+      return assetFilename.endsWith('.css') || assetFilename.endsWith('.js');
+    }
+  },
+  devtool: 'source-map',
   plugins: [
     new ExtractTextPlugin({
       filename: '[name].css',
     }),
-    new UglifyJsPlugin(),
   ],
 };

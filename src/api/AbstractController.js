@@ -14,7 +14,6 @@ class AbstractController {
         ...headers,
       },
     });
-    // http.interceptors.response.use(response => response, error => Promise.reject(error));
     return http;
   }
 

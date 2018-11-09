@@ -1,6 +1,14 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { createLogger } from 'redux-logger';
-import { createEpicMiddleware } from 'redux-observable';
+import {
+  createStore,
+  applyMiddleware,
+  compose,
+} from 'redux';
+import {
+  createLogger,
+} from 'redux-logger';
+import {
+  createEpicMiddleware,
+} from 'redux-observable';
 import RootEpics from './epics';
 import RootReducer from './reducers';
 

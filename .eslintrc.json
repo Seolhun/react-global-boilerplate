@@ -10,6 +10,8 @@
     "FB": true
   },
   "rules": {
-    "react/forbid-prop-types": ["error", { "forbid": ["any", "object"] }]
+    "react/forbid-prop-types": ["error", {
+      "forbid": ["any", "object"]
+    }]
   }
 }

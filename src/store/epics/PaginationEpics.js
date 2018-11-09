@@ -1,5 +1,5 @@
 import { LOCAL_PAGINATION } from '../type/ActionTypes';
-import { freepassActionCreator } from '../utils/ActionCreatorUtils';
+import { actionCreator } from '../utils/ActionCreatorUtils';
 
 /*
   SET_PAGINATION: TOGGLE,
@@ -57,7 +57,7 @@ const setPaginationEpic = (action$, store$) => {
       type: TYPE.SUCCESS,
       payload,
     }))
-    .catch(error => [freepassActionCreator(TYPE.FAILURE, error.message)]);
+    .catch(error => [actionCreator(TYPE.FAILURE, error.message)]);
 };
 
 export { setPaginationEpic };

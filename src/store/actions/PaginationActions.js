@@ -1,5 +1,5 @@
 import { LOCAL_PAGINATION } from '../type/ActionTypes';
-import { freepassActionCreator } from '../utils/ActionCreatorUtils';
+import { actionCreator } from '../utils/ActionCreatorUtils';
 
 /*
   SET_PAGINATION: TOGGLE,
@@ -12,7 +12,7 @@ export const setPagination = (payloadName, {
   page, count, orderBy, sortBy, totalPage,
 }) => {
   const TYPE = LOCAL_PAGINATION.SET_PAGINATION;
-  return freepassActionCreator(
+  return actionCreator(
     TYPE.REQUEST,
     {
       page,
