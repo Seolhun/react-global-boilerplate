@@ -19,7 +19,7 @@ const INIT_STATE = {
   },
 };
 
-export const paginationReducer = (state = INIT_STATE, action) => {
+export default (state = INIT_STATE, action) => {
   switch (action.type) {
     case PAGINATION.SUCCESS:
       return {
@@ -29,8 +29,4 @@ export const paginationReducer = (state = INIT_STATE, action) => {
     default:
       return state;
   }
-};
-
-export default {
-  paginationReducer,
 };

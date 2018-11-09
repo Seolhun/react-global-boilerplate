@@ -22,14 +22,14 @@ class ChangeLanguageContainer extends PureComponent {
       <Fragment>
         <Button
           type="button"
-          className='btn btn-main'
+          className="btn btn-main"
           onClick={() => this.changeLanguage('en')}
         >
           {t('english')}
         </Button>
         <Button
           type="button"
-          className='btn btn-main'
+          className="btn btn-main"
           onClick={() => this.changeLanguage('ko')}
         >
           {t('korean')}

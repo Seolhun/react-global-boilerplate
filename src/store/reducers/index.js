@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
 
-import AuthenticationReducers from './AuthenticationReducers';
-import { paginationReducer } from './PaginationReducers';
+// eslint-disable-next-line import/no-named-as-default
+import PaginationReducers from './PaginationReducers';
 
 export default combineReducers({
-  pagination: paginationReducer,
-  authentication: AuthenticationReducers,
+  pagination: PaginationReducers,
 });

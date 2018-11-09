@@ -1,12 +1,16 @@
-export const OAUTH = {
-  FACEBOOK: '145288242769896',
-};
+import { TOKENS } from './tokens';
 
-export const TOKENS = {
-  AUTH: 'auth-token',
-};
-
-export const ORDER_BY = {
+const ORDER_BY = {
   ASC: 'ASC',
   DESC: 'DESC',
+};
+
+export {
+  TOKENS,
+  ORDER_BY,
+};
+
+export default {
+  TOKENS,
+  ORDER_BY,
 };

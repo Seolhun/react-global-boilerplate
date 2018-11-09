@@ -1,6 +1,7 @@
 @import '../../assets/variable/color.scss';
 
-@each $key, $value in $defaultColors {
+@each $key,
+$value in $defaultColors {
   .btn-#{$key} {
     background-color: $value;
     color: #fff;

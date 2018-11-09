@@ -1,3 +1,3 @@
-import ChangeLanguageContainer from './ChangeLanguageContainer';
+import ChangeLanguage from './ChangeLanguage';
 
-export default ChangeLanguageContainer;
+export default ChangeLanguage;

@@ -1,5 +1,5 @@
 import ErrorView from '../container/error';
-import BusListContainer from '../container/table/BusListContainer';
+import BusList from '../container/table/BusList';
 
 const routeCreator = ({
   path,
@@ -30,14 +30,14 @@ const schema = [
   routeCreator({
     path: '/table',
     label: 'TablePagination',
-    component: BusListContainer,
+    component: BusList,
     exact: true,
     depth: 1,
   }),
   routeCreator({
     path: '/table/pagination',
     label: 'TablePaginationView',
-    component: BusListContainer,
+    component: BusList,
     exact: true,
     depth: 1,
   }),
