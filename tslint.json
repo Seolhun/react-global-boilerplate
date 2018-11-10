@@ -1,0 +1,11 @@
+{
+  "extends": "tslint-config-airbnb",
+  "rules": {
+    "import-name": [true, {
+      "lodash": "_",
+      "fp": "_",
+      "server": "ReactDOMServer",
+      "react": "React",
+    }]
+  }
+}
