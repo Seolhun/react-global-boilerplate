@@ -1,13 +1,29 @@
+import { ReactNode } from 'react';
+
 import ErrorView from '../container/error';
 import BusList from '../container/table/BusList';
 import Hello from '../container/hello/Hello';
 
-const routeCreator = ({
+interface RouteType {
+  path: string;
+  label: string;
+  component: ReactNode | null;
+  depth, // 0 : anywhere
+  // NotReuired
+  params?: object;
+  className?: string;
+  level?: number;
+  exact?: boolean;
+  isLink?: boolean;
+  onEnter?: () => any;
+}
+
+const routeCreator: (route: RouteType) => RouteType = ({
   path,
   label,
   component,
-  // 0 : anywhere
-  depth,
+  depth, // 0 : anywhere
+  // NotReuired
   params = {},
   className = '',
   level = 1,
@@ -27,7 +43,7 @@ const routeCreator = ({
   onEnter,
 });
 
-const schema = [
+const schema: RouteType[] = [
   routeCreator({
     path: '/hello',
     label: 'Hello',
@@ -51,6 +67,7 @@ const schema = [
   }),
   // Error
   routeCreator({
+    path: '*',
     label: 'ErrorView',
     component: ErrorView,
     depth: 0,

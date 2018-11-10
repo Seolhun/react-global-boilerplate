@@ -18,7 +18,7 @@ const NotFoundView = (props) => {
     <section className="row">
       <div className="col-sm-12">
         <h1>
-          Not Found Page :
+          Not Found Page
           {statusCode}
         </h1>
       </div>
