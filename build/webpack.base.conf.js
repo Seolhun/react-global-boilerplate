@@ -12,7 +12,7 @@ const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    index: resolve('src/Main.jsx'),
+    index: resolve('src/Main.tsx'),
   },
   output: {
     path: config.build.assetsRoot,

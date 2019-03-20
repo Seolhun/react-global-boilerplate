@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Link,
   Switch,
@@ -58,11 +57,6 @@ const renderRoute = (route, depth) => {
 };
 
 const Routes = ({ depth, routes }) => {
-  Routes.propTypes = {
-    depth: PropTypes.number.isRequired,
-    routes: PropTypes.array.isRequired,
-  };
-
   return (
     <div>
       <Switch>

@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 
 import ErrorView from '../container/error';
-import BusList from '../container/table/BusList';
 import Hello from '../container/hello/Hello';
 
 interface RouteType {
@@ -48,20 +47,6 @@ const schema: RouteType[] = [
     path: '/hello',
     label: 'Hello',
     component: Hello,
-    exact: true,
-    depth: 1,
-  }),
-  routeCreator({
-    path: '/table',
-    label: 'TablePagination',
-    component: BusList,
-    exact: true,
-    depth: 1,
-  }),
-  routeCreator({
-    path: '/table/pagination',
-    label: 'TablePaginationView',
-    component: BusList,
     exact: true,
     depth: 1,
   }),

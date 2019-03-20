@@ -1,7 +1,3 @@
-import BusController from './BusController';
+import http from './http';
 
-export { BusController };
-
-export default {
-  BusController,
-};
+export default http;

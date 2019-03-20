@@ -9,6 +9,7 @@ import {
 import {
   createEpicMiddleware,
 } from 'redux-observable';
+
 import RootEpics from './epics';
 import RootReducer from './reducers';
 
@@ -24,10 +25,7 @@ if (isDev) {
 const store = isDev
   ? createStore(
     RootReducer,
-    compose(
-      applyMiddleware(...middlewares),
-      window.devToolsExtension ? window.devToolsExtension() : f => f,
-    ),
+    compose(applyMiddleware(...middlewares)),
   )
   : createStore(RootReducer, applyMiddleware(...middlewares));
 
