@@ -6,7 +6,7 @@ Global React boilerplate with React, Router, Redux, Saga, RxJs, i18n, Jest
 ## Packages
 - webpack4
 - babel7
-- React 16.6
+- React 16.8.4
 - react-router V4
 - redux
 - redux-saga
