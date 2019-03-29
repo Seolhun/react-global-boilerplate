@@ -1,5 +1,7 @@
 # React-Global-BoilerPlate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Seolhun/react-global-boilerplate.svg)](https://greenkeeper.io/)
+
 ## Description
 Global React boilerplate with React, Router, Redux, Saga, RxJs, i18n, Jest
 
