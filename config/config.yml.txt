@@ -1,0 +1,62 @@
+version: 2.0
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.10
+    working_directory: ~/localize-components
+    branches:
+      only:
+        - master
+        - develop
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - node-dependencies-{{ checksum "package.json" }}
+            - node-dependencies-
+
+      - run:
+          name: "Checking versions"
+          command: |
+            node --version
+            npm --version
+            yarn --version
+      - run:
+          name: "install packages"
+          command: yarn install
+
+      - run:
+          name: "Lerna bootstrap packages"
+          command: yarn bs
+
+      - save_cache:
+          key: node-dependencies-{{ checksum "package.json" }}
+          keys:
+            - node-dependencies-{{ checksum "package.json" }}
+            - node-dependencies-
+          paths:
+            - node_modules
+
+      - run:
+          name: "Lerna packages bundling"
+          command: yarn rollup
+
+      - run:
+          name: "Deploy docs into surge"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              yarn deploy:docs
+            fi
+            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+              yarn deploy:docs:dev
+            fi
+      - run:
+          name: "Deploy examples into surge"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              yarn deploy:ex
+            fi
+            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+              yarn deploy:ex:dev
+            fi
