@@ -21,7 +21,7 @@
     "i18n"
   ],
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "bootstrap-sass-grid": "^4.0.1",
     "classnames": "^2.2.6",
     "enzyme-adapter-react-16": "^1.1.1",
