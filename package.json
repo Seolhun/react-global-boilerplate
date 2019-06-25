@@ -63,7 +63,7 @@
     "copy-webpack-plugin": "^5.0.2",
     "css-loader": "^2.1.1",
     "enzyme": "^3.3.0",
-    "eslint": "^5.1.0",
+    "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
