@@ -50,7 +50,7 @@
     "@babel/plugin-transform-literals": "^7.2.0",
     "@babel/plugin-transform-spread": "^7.2.2",
     "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@types/react": "^16.8.17",
     "babel-eslint": "^10.0.1",
