@@ -47,7 +47,7 @@
     "@babel/plugin-transform-async-to-generator": "^7.8.0",
     "@babel/plugin-transform-classes": "^7.8.0",
     "@babel/plugin-transform-destructuring": "^7.8.0",
-    "@babel/plugin-transform-literals": "^7.2.0",
+    "@babel/plugin-transform-literals": "^7.8.0",
     "@babel/plugin-transform-spread": "^7.2.2",
     "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
